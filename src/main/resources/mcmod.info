@@ -1,0 +1,16 @@
+[
+{
+  "modid": "linux.hacks",
+  "name": "linux.hacks",
+  "description": "utility mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["32Linux"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
