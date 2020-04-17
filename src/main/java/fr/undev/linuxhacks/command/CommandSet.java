@@ -6,7 +6,7 @@ import fr.undev.linuxhacks.module.Modules;
 import fr.undev.linuxhacks.util.ChatUtils;
 import fr.undev.linuxhacks.util.ConfigUtils;
 
-public class CommandBind
+public class CommandSet
 extends Command {
     @Override
     public boolean onCommand(String command, String[] args) {
@@ -16,12 +16,12 @@ extends Command {
 
     @Override
     public String getUsage() {
-        return "bind";
+        return "set <Module> <Parameter> <Value>";
     }
 
     @Override
     public String getDescription() {
-        return "Bind modules to a key";
+        return "Set different parameters of a module";
     }
 }
 
