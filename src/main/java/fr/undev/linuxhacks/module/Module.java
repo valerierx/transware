@@ -2,37 +2,39 @@ package fr.undev.linuxhacks.module;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
 public abstract class Module {
-    private final String displayName;
-    private final LinkedHashMap<String, Boolean> settings;
-    private String id;
+	private final String displayName;
+	private final LinkedHashMap<String, Boolean> settings;
+	private String id;
+	
+	public Module(String name) {
+		this.displayName = name;
+		this.settings = new LinkedHashMap<>();
+	}
+	
+	public abstract void onEnable();
+	
+	public abstract void onDisable();
+	
+	public abstract void onTick(ClientTickEvent event);
 
-    public Module(String name) {
-        this.displayName = name;
-        this.settings = new LinkedHashMap();
-    }
+	public String getDisplayName() {
+		return displayName;
+	}
 
-    public abstract void onEnable();
+	public HashMap<String, Boolean> getSettings() {
+		return settings;
+	}
 
-    public abstract void onDisable();
+	public String getId() {
+		return id;
+	}
 
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    public HashMap<String, Boolean> getSettings() {
-        return this.settings;
-    }
-
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 }
 

@@ -10,6 +10,7 @@ import fr.undev.linuxhacks.module.exploit.Timer;
 public class Modules {
     private static LinkedHashMap<String, Module> registered = new LinkedHashMap<String, Module>();
     private static Collection<String> enabled = new ArrayList<String>();
+    private static Collection<String> settings = new ArrayList<String>();
     private static Collection<String> toggleQueue = new ArrayList<String>();
 
     public static Collection<String> getToggleQueue() {

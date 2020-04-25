@@ -1,59 +1,32 @@
 package fr.undev.linuxhacks.util;
 
-import fr.undev.linuxhacks.util.FileUtils;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import java.io.File;
-import java.io.FileReader;
+import java.io.IOException;
+import org.ini4j.*;
+import net.minecraft.client.Minecraft;
 
-public abstract class ConfigUtils {
-
-	    private File file;
-
-	    private JsonObject jsonObject;
-
-	    public ConfigUtils(File file) {
-	        this.file = file;
-	    }
-
-	    public File getFile() {
-	        return file;
-	    }
-
-	    public void onLoad() {
-	        this.jsonObject = this.convertJsonObjectFromFile();
-	    }
-
-	    public void onSave() {
-
-	    }
-
-	    protected void saveJsonObjectToFile(JsonObject object) {
-	        File newFile = FileUtils.recreateFile(this.getFile());
-	        FileUtils.saveJsonFile(newFile, object);
-	    }
-
-	    protected JsonObject convertJsonObjectFromFile() {
-	        if (!this.getFile().exists())
-	            return new JsonObject();
-
-	        FileReader reader = FileUtils.createReader(this.getFile());
-	        if (reader == null)
-	            return new JsonObject();
-
-	        JsonElement element = new JsonParser().parse(reader);
-	        if (!element.isJsonObject())
-	            return new JsonObject();
-
-	        FileUtils.closeReader(reader);
-
-	        return element.getAsJsonObject();
-	    }
-
-	    public JsonObject getJsonObject() {
-	        return jsonObject;
-	    }
+public class ConfigUtils {
+	//Made by linux, big thanks to the folks at ini4j!
 	
+	private String configPath = Minecraft.getMinecraft().mcDataDir.getPath() + "linuxdothacks.ini";
 	
+	public String getSetting(String module, String setting) throws InvalidFileFormatException, IOException {
+		 Wini ini = new Wini(new File(configPath));
+	     return ini.get(module, setting);
 	}
+
+	
+	public void writeStringSetting(String module, String setting, String data) throws InvalidFileFormatException, IOException {
+		Wini ini = new Wini(new File(configPath));
+		ini.put(module, setting, data);
+	}
+	public void writeBooleanSetting(String module, String setting, Boolean data) throws InvalidFileFormatException, IOException {
+		Wini ini = new Wini(new File(configPath));
+		ini.put(module, setting, data);
+	}
+	public void writeIntSetting(String module, String setting, Integer data) throws InvalidFileFormatException, IOException {
+		Wini ini = new Wini(new File(configPath));
+		ini.put(module, setting, data);
+	}
+	
+}
