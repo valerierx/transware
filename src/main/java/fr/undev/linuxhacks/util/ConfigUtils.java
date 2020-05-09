@@ -8,7 +8,7 @@ import net.minecraft.client.Minecraft;
 public class ConfigUtils {
 	//Made by linux, big thanks to the folks at ini4j!
 	
-	private String configPath = Minecraft.getMinecraft().mcDataDir.getPath() + "linuxdothacks.ini";
+	private String configPath = Minecraft.getMinecraft().mcDataDir.getPath() + "/linuxdothacks.ini";
 	
 	public String getSetting(String module, String setting) throws InvalidFileFormatException, IOException {
 		 Wini ini = new Wini(new File(configPath));

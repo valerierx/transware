@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
-import fr.undev.linuxhacks.module.Module;
-import fr.undev.linuxhacks.module.exploit.Timer;
+import fr.undev.linuxhacks.module.test.Timer;
 
 public class Modules {
     private static LinkedHashMap<String, Module> registered = new LinkedHashMap<String, Module>();
