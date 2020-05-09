@@ -24,4 +24,9 @@ public class Friends {
         fw.write(UUID);
         fw.close();
     }
+    public static String read(String uuid) throws IOException {
+        FileReader in = new FileReader(friends);
+        String name = UUIDUtils.getName(uuid);
+        return name;
+    }
 }
