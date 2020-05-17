@@ -2,17 +2,14 @@ package fr.undev.linuxhacks.command;
 
 import java.util.LinkedHashMap;
 
-import fr.undev.linuxhacks.command.Command;
-import fr.undev.linuxhacks.command.CommandBind;
-import fr.undev.linuxhacks.command.CommandHelp;
-
 public class Commands {
     private static LinkedHashMap<String, Command> registered = new LinkedHashMap();
-    private static String prefix = "*";
+    private static String prefix = "-";
 
     public static void init() {
         Commands.register("help", new CommandHelp());
-        Commands.register("crash", new CommandBind());
+        Commands.register("friend", new CommandFriend());
+        Commands.register("toggle", new CommandTest());
     }
 
     public static void register(String id, Command command) {

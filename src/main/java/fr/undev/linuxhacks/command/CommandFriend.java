@@ -10,31 +10,23 @@ import fr.undev.linuxhacks.util.UUIDUtils;
 
 import java.io.IOException;
 
-import static fr.undev.linuxhacks.friends.Friends.read;
 
 public class CommandFriend
 extends Command {
     @Override
     public boolean onCommand(String command, String[] args) {
-		if (args[0].equals("add")) {
-            try {
-                if(UUIDUtils.getUUID(args[1].equals(UUIDUtils.getUUID(args[1]))))
-                    ChatUtils.printMessage(ChatUtils.coloredString("WARNING: " + args[1] + " is already in the friend list!", "red"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        
+        return false;
     }
+
 
     @Override
     public String getUsage() {
-        return "set <Module> <Parameter> <Value>";
+        return "friend aComm|del <Username>";
     }
 
     @Override
     public String getDescription() {
-        return "Set different parameters of a module";
+        return "Whitelist people from CrystalAura, KillAura, etc.";
     }
 }
 

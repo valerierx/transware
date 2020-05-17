@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
-import fr.undev.linuxhacks.module.test.Timer;
+import fr.undev.linuxhacks.module.test.TestModule;
 
 public class Modules {
     private static LinkedHashMap<String, Module> registered = new LinkedHashMap<String, Module>();
@@ -17,7 +17,7 @@ public class Modules {
     }
 
     public static void init() {
-        Modules.register("timer", new Timer("Timer"));
+        Modules.register("test", new TestModule("Test"));
     }
 
     public static void register(String id, Module module) {

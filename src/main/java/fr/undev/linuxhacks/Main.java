@@ -1,6 +1,7 @@
 package fr.undev.linuxhacks;
 
 import fr.undev.linuxhacks.command.Commands;
+import fr.undev.linuxhacks.events.HUDHandler;
 import fr.undev.linuxhacks.friends.Friends;
 import fr.undev.linuxhacks.listeners.ClientChatListener;
 import fr.undev.linuxhacks.module.Modules;
@@ -21,10 +22,11 @@ import java.io.IOException;
 	    public static final String NAME = "linux.hacks";
 	    public static final String VERSION = "0.1";
 	    @Mod.EventHandler
-	    public void init(FMLInitializationEvent event) throws IOException {
+	    public void init(FMLInitializationEvent event) {
 	        MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
+			MinecraftForge.EVENT_BUS.register(new HUDHandler());
 	        Commands.init();
-	        Friends.init();
+	        //Friends.init(); broken atm
 	        Modules.init();
 	    }
 	}

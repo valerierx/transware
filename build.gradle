@@ -1,7 +1,9 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://www.jitpack.io' }
         maven { url = "https://files.minecraftforge.net/maven" }
+
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -9,7 +11,10 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-
+repositories {
+        
+        maven { url "https://jitpack.io" }
+}
 
 version = "0.1"
 group = "fr.undev.linuxhacks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -43,6 +48,8 @@ dependencies {
     //compile "some.group:artifact:version"
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compile group: 'org.ini4j', name: 'ini4j', version: '0.5.1'
+    compile group: 'com.github.Vatuu', name: 'discord-rpc', version: '1.6.2'
+    
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
