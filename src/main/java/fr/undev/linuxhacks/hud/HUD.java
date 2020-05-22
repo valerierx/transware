@@ -10,6 +10,6 @@ public class HUD {
         int height = scaled.getScaledHeight();
 
         Minecraft.getMinecraft().fontRenderer.drawString("linux.hacks v0.1", 2, 40, Integer.parseInt("C2185B", 16));
-        Minecraft.getMinecraft().fontRenderer.drawString("Welcome " + Minecraft.getMinecraft().getSession().getUsername(), 300, 0, Integer.parseInt("1DE9B6", 16));
+        Minecraft.getMinecraft().fontRenderer.drawString("Welcome " + Minecraft.getMinecraft().getSession().getUsername(), 2, 50, Integer.parseInt("1DE9B6", 16));
     }
 }
