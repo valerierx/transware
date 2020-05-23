@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
 public abstract class Module {
 	private final String displayName;
-	private final LinkedHashMap<String, Boolean> settings;
+	private final LinkedHashMap<String, String> settings;
 	private String id;
 	
 	public Module(String name) {
@@ -25,7 +25,7 @@ public abstract class Module {
 		return displayName;
 	}
 
-	public HashMap<String, Boolean> getSettings() {
+	public HashMap<String, String> getSettings() {
 		return settings;
 	}
 

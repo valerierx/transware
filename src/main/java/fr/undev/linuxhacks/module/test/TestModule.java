@@ -8,10 +8,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 public class TestModule extends Module {
     public TestModule(String name) {
         super(name);
-	this.getSettings().put("text", "hl2 combine");
+	    this.getSettings().put("text", "hl2 combine");
     }
-    private int tickWait = 0;
-
     @Override
     public void onEnable() {
     	ChatUtils.printMessage(ChatUtils.coloredString("test module " + this.getSettings().get("text"), "red"));
