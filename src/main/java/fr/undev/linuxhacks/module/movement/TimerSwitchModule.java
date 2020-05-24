@@ -2,9 +2,9 @@ package fr.undev.linuxhacks.module.movement;
 
 import fr.undev.linuxhacks.module.Module;
 import fr.undev.linuxhacks.util.ChatUtils;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraft.util.Timer;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
 
 public class TimerSwitchModule extends Module {
     private int tickWait = 0;
@@ -27,6 +27,8 @@ public class TimerSwitchModule extends Module {
         ChatUtils.printMessage(ChatUtils.coloredString("TimerSwitch OFF", "red"));
         mc.timer.tickLength = 50;
     }
+
+
     @Override
     public void onTick(TickEvent.ClientTickEvent event) {
         if (tickWait == Float.parseFloat(this.getSettings().get("tickToFast"))) {
