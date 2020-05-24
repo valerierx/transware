@@ -4,7 +4,6 @@ import fr.undev.linuxhacks.command.Command;
 import fr.undev.linuxhacks.module.Module;
 import fr.undev.linuxhacks.module.Modules;
 import fr.undev.linuxhacks.util.ChatUtils;
-import fr.undev.linuxhacks.util.ConfigUtils;
 import fr.undev.linuxhacks.friends.Friends;
 import fr.undev.linuxhacks.util.UUIDUtils;
 

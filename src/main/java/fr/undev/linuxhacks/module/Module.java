@@ -3,12 +3,14 @@ package fr.undev.linuxhacks.module;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
 public abstract class Module {
 	private final String displayName;
 	private final LinkedHashMap<String, String> settings;
 	private String id;
+	protected static final Minecraft mc = Minecraft.getMinecraft();
 	
 	public Module(String name) {
 		this.displayName = name;

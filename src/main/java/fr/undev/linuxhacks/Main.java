@@ -31,6 +31,7 @@ import java.io.IOException;
 			Commands.init();
 			//Friends.init(); broken atm
 			Modules.init();
+
 		}
 		
 		@Mod.EventHandler
