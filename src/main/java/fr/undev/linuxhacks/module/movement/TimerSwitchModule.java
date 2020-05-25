@@ -6,7 +6,7 @@ import net.minecraft.util.Timer;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 
-public class TimerSwitchModule extends Module {
+public class TimerSwitchModule  extends Module{
     private int tickWait = 0;
 
     public TimerSwitchModule(String name) {
@@ -23,7 +23,7 @@ public class TimerSwitchModule extends Module {
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable()  throws NoSuchFieldException, SecurityException {
         ChatUtils.printMessage(ChatUtils.coloredString("TimerSwitch OFF", "red"));
         mc.timer.tickLength = 50;
     }

@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
 public abstract class Module {
 	private final String displayName;
-	private final LinkedHashMap<String, String> settings;
+	public static LinkedHashMap<String, String> settings;
 	private String id;
 	protected static final Minecraft mc = Minecraft.getMinecraft();
 	
@@ -19,7 +19,7 @@ public abstract class Module {
 	
 	public abstract void onEnable();
 	
-	public abstract void onDisable();
+	public abstract void onDisable() throws NoSuchFieldException;
 	
 	public abstract void onTick(ClientTickEvent event);
 
@@ -27,7 +27,7 @@ public abstract class Module {
 		return displayName;
 	}
 
-	public HashMap<String, String> getSettings() {
+	public static HashMap<String, String> getSettings() {
 		return settings;
 	}
 

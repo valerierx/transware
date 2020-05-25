@@ -5,8 +5,8 @@ import fr.undev.linuxhacks.events.HUDHandler;
 import fr.undev.linuxhacks.friends.Friends;
 import fr.undev.linuxhacks.listeners.ClientChatListener;
 import fr.undev.linuxhacks.module.Modules;
+import fr.undev.linuxhacks.module.movement.TimerSwitchModule;
 import net.arikia.dev.drpc.DiscordEventHandlers;
-import net.arikia.dev.drpc.DiscordRPC;
 import net.arikia.dev.drpc.DiscordRichPresence;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,17 +29,15 @@ import java.io.IOException;
 			MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
 			MinecraftForge.EVENT_BUS.register(new HUDHandler());
 			Commands.init();
-			//Friends.init(); broken atm
+
 			Modules.init();
+
 
 		}
 		
 		@Mod.EventHandler
 		public void postInit(FMLPostInitializationEvent event) {
-			DiscordEventHandlers handlers = new DiscordEventHandlers.Builder().setReadyEventHandler((user) -> {
-				System.out.println("Welcome " + user.username + "#" + user.discriminator + ".");
-			}).build();
-			DiscordRPC.discordInitialize("soon", handlers, true);
+			DiscordRPC.initRPC();
 	    }
 	}
 	
