@@ -31,8 +31,8 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: gradle dependencies
-
+      - run: gradle wrapper
+      - run: gradle setupDecompWorkspace
       - save_cache:
           paths:
             - ~/.gradle
