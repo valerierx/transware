@@ -93,3 +93,7 @@ processResources {
             attributes 'FMLAT': 'linux_at.cfg'
         }
     }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
