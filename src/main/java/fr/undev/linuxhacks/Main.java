@@ -1,14 +1,3 @@
-/*
- * Decompiled with CFR 0.149.
- * 
- * Could not load the following classes:
- *  net.minecraftforge.common.MinecraftForge
- *  net.minecraftforge.fml.common.Mod
- *  net.minecraftforge.fml.common.Mod$EventHandler
- *  net.minecraftforge.fml.common.event.FMLInitializationEvent
- *  net.minecraftforge.fml.relauncher.Side
- *  net.minecraftforge.fml.relauncher.SideOnly
- */
 package fr.undev.linuxhacks;
 
 import fr.undev.linuxhacks.command.Commands;
