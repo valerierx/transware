@@ -1,42 +1,45 @@
+/*
+ * Decompiled with CFR 0.149.
+ * 
+ * Could not load the following classes:
+ *  net.minecraftforge.fml.common.gameevent.TickEvent$ClientTickEvent
+ */
 package fr.undev.linuxhacks.module;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public abstract class Module {
-	private final String displayName;
-	public static LinkedHashMap<String, String> settings;
-	private String id;
-	protected static final Minecraft mc = Minecraft.getMinecraft();
-	
-	public Module(String name) {
-		this.displayName = name;
-		this.settings = new LinkedHashMap<>();
-	}
-	
-	public abstract void onEnable();
-	
-	public abstract void onDisable() throws NoSuchFieldException;
-	
-	public abstract void onTick(ClientTickEvent event);
+    private final String displayName;
+    private final LinkedHashMap<String, Boolean> settings;
+    private String id;
 
-	public String getDisplayName() {
-		return displayName;
-	}
+    public Module(String name) {
+        this.displayName = name;
+        this.settings = new LinkedHashMap();
+    }
 
-	public static HashMap<String, String> getSettings() {
-		return settings;
-	}
+    public abstract void onEnable();
 
-	public String getId() {
-		return id;
-	}
+    public abstract void onDisable();
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public abstract void onTick(TickEvent.ClientTickEvent var1);
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    public HashMap<String, Boolean> getSettings() {
+        return this.settings;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
 

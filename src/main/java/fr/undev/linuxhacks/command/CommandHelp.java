@@ -1,10 +1,12 @@
+/*
+ * Decompiled with CFR 0.149.
+ */
 package fr.undev.linuxhacks.command;
-
-import java.util.Map;
 
 import fr.undev.linuxhacks.command.Command;
 import fr.undev.linuxhacks.command.Commands;
 import fr.undev.linuxhacks.util.ChatUtils;
+import java.util.Map;
 
 public class CommandHelp
 extends Command {

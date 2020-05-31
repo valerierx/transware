@@ -1,13 +1,16 @@
+/*
+ * Decompiled with CFR 0.149.
+ */
 package fr.undev.linuxhacks.module;
 
+import fr.undev.linuxhacks.module.Module;
+import fr.undev.linuxhacks.module.test.TestModule;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
-import fr.undev.linuxhacks.module.test.TestModule;
-
 public class Modules {
-    private static LinkedHashMap<String, Module> registered = new LinkedHashMap<String, Module>();
+    private static LinkedHashMap<String, Module> registered = new LinkedHashMap();
     private static Collection<String> enabled = new ArrayList<String>();
     private static Collection<String> settings = new ArrayList<String>();
     private static Collection<String> toggleQueue = new ArrayList<String>();

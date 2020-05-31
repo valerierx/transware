@@ -1,3 +1,12 @@
+/*
+ * Decompiled with CFR 0.149.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.client.Minecraft
+ *  net.minecraft.util.text.ITextComponent$Serializer
+ *  net.minecraftforge.client.event.ClientChatEvent
+ *  net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+ */
 package fr.undev.linuxhacks.listeners;
 
 import fr.undev.linuxhacks.command.Command;
