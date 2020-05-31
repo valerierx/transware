@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 
+import fr.undev.linuxhacks.module.client.ClickGUIModule;
 import fr.undev.linuxhacks.module.test.TestModule;
 
 public class Modules {
@@ -18,6 +19,7 @@ public class Modules {
 
     public static void init() {
         Modules.register("test", new TestModule("Test"));
+        Modules.register("clickgui", new ClickGUIModule("ClickGUI"));
     }
 
     public static void register(String id, Module module) {
