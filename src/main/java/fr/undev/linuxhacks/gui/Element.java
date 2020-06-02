@@ -1,5 +1,9 @@
 package fr.undev.linuxhacks.gui;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.util.ResourceLocation;
+
 public class Element {
     protected final String name;
 
@@ -15,6 +19,8 @@ public class Element {
 
     protected boolean extended;
 
+    public final FontRenderer fontRenderer = new FontRenderer(Minecraft.getMinecraft().gameSettings, new ResourceLocation("textures/font/ascii.png"), Minecraft.getMinecraft().renderEngine, false);
+
     public Element(String name, float posX, float posY, float width, float height) {
         this.name = name;
         this.posX = posX;
@@ -23,7 +29,17 @@ public class Element {
         this.height = height;
     }
 
-    // Indirectly access variables, to prevent haram
+    public void render(int mouseX, int mouseY) {
+    }
+
+    public void onMouseClicked(int mouseX, int mouseY, int mouseButton) {
+    }
+
+    public void onMouseReleased(int mouseX, int mouseY, int mouseButton) {
+    }
+
+    public void move(float posX, float posY) {
+    }
 
     public String getName() {
         return this.name;
@@ -67,5 +83,9 @@ public class Element {
 
     public void setExtended(boolean extended) {
         this.extended = extended;
+    }
+
+    public boolean mouseWithinElement(int mouseX, int mouseY) {
+        return (mouseX >= this.getPosX() && mouseX <= this.getPosX() + this.getWidth() && mouseY >= this.getPosY() && mouseY <= this.getPosY() + this.getHeight());
     }
 }
