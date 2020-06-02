@@ -6,18 +6,21 @@
  */
 package fr.undev.linuxhacks.module;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+
+import fr.undev.linuxhacks.setting.Setting;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public abstract class Module {
     private final String displayName;
-    private final LinkedHashMap<String, Boolean> settings;
+    private final ArrayList<Setting> settings;
     private String id;
 
     public Module(String name) {
         this.displayName = name;
-        this.settings = new LinkedHashMap();
+        this.settings = new ArrayList();
     }
 
     public abstract void onEnable();
@@ -30,8 +33,17 @@ public abstract class Module {
         return this.displayName;
     }
 
-    public HashMap<String, Boolean> getSettings() {
+    public ArrayList<Setting> getSettings() {
         return this.settings;
+    }
+
+    public Setting getSettingFromName(String name) {
+        for (Setting setting : this.getSettings()) {
+            if (setting.getName().equals(name)) {
+                return setting;
+            }
+        }
+        return null;
     }
 
     public String getId() {
