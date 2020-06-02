@@ -1,3 +1,6 @@
+/*
+ * Decompiled with CFR 0.149.
+ */
 package fr.undev.linuxhacks.command;
 
 public abstract class Command {

@@ -1,5 +1,12 @@
+/*
+ * Decompiled with CFR 0.149.
+ */
 package fr.undev.linuxhacks.command;
 
+import fr.undev.linuxhacks.command.Command;
+import fr.undev.linuxhacks.command.CommandFriend;
+import fr.undev.linuxhacks.command.CommandHelp;
+import fr.undev.linuxhacks.command.CommandTest;
 import java.util.LinkedHashMap;
 
 public class Commands {

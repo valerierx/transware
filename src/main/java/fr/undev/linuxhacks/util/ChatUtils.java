@@ -1,4 +1,12 @@
-
+/*
+ * Decompiled with CFR 0.149.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.client.Minecraft
+ *  net.minecraft.util.text.ChatType
+ *  net.minecraft.util.text.ITextComponent
+ *  net.minecraft.util.text.ITextComponent$Serializer
+ */
 package fr.undev.linuxhacks.util;
 
 import fr.undev.linuxhacks.module.Module;
