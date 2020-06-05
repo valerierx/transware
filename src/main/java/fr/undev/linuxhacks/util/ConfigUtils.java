@@ -11,7 +11,6 @@ package fr.undev.linuxhacks.util;
 import java.io.File;
 import java.io.IOException;
 import net.minecraft.client.Minecraft;
-import org.ini4j.InvalidFileFormatException;
 import org.ini4j.Wini;
 
 public class ConfigUtils {
@@ -21,13 +20,22 @@ public class ConfigUtils {
         this.configPath = Minecraft.getMinecraft().mcDataDir.getPath() + "/linuxdothacks.ini";
     }
 
-    public String getSetting(String module, String setting) throws InvalidFileFormatException, IOException {
-        Wini ini = new Wini(new File(this.configPath));
+    public String getSetting(String module, String setting) {
+        Wini ini = null;
+        try {
+            ini = new Wini(new File(this.configPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return ini.get((Object)module, (Object)setting);
     }
-
-    public void writeSetting(String module, String setting, String data) throws InvalidFileFormatException, IOException {
-        Wini ini = new Wini(new File(this.configPath));
+    public void writeSetting(String module, String setting, String data) {
+        Wini ini = null;
+        try {
+            ini = new Wini(new File(this.configPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         ini.put(module, setting, (Object)data);
     }
 }
