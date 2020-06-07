@@ -7,9 +7,12 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.github.johnrengelman.shadow'
+
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 repositories {
         
@@ -49,23 +52,6 @@ dependencies {
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compile group: 'org.ini4j', name: 'ini4j', version: '0.5.1'
     compile group: 'com.github.Vatuu', name: 'discord-rpc', version: '1.6.2'
-    
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
 }
 
 processResources {
@@ -94,3 +80,12 @@ processResources {
         }
     }
 
+shadowJar {
+    dependencies {
+        include(dependency('com.googlecode.json-simple:json-simple'))
+        include(dependency('org.ini4j:ini4j'))
+        include(dependency('com.github.Vatuu:discord-rpc'))
+    }
+    exclude 'dummyThing' // can someone explain why this is here
+    classifier = 'release'
+}
