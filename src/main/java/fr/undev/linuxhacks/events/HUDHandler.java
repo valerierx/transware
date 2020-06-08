@@ -9,10 +9,15 @@
  */
 package fr.undev.linuxhacks.events;
 
-import fr.undev.linuxhacks.hud.HUD;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import org.lwjgl.opengl.GL11;
+
+// Main.
+import fr.undev.linuxhacks.Main;
 
 public class HUDHandler {
     @SubscribeEvent
@@ -20,7 +25,17 @@ public class HUDHandler {
         if (event.getType() != RenderGameOverlayEvent.ElementType.EXPERIENCE) {
             return;
         }
-        new HUD(Minecraft.getMinecraft());
+
+        Main.get_hud_manager().render();
+
+        GL11.glPushMatrix();
+
+		GL11.glEnable(GL11.GL_TEXTURE_2D);
+		GL11.glEnable(GL11.GL_BLEND);
+
+		GlStateManager.enableBlend();
+
+		GL11.glPopMatrix();
     }
 }
 

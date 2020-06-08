@@ -3,10 +3,7 @@
  */
 package fr.undev.linuxhacks.command;
 
-import fr.undev.linuxhacks.command.Command;
-import fr.undev.linuxhacks.command.CommandFriend;
-import fr.undev.linuxhacks.command.CommandHelp;
-import fr.undev.linuxhacks.command.CommandTest;
+import fr.undev.linuxhacks.command.*;
 import java.util.LinkedHashMap;
 
 public class Commands {
@@ -16,7 +13,8 @@ public class Commands {
     public static void init() {
         Commands.register("help", new CommandHelp());
         Commands.register("friend", new CommandFriend());
-        Commands.register("toggle", new CommandTest());
+        Commands.register("toggle", new CommandToggle());
+        Commands.register("hud", new CommandHUD());
     }
 
     public static void register(String id, Command command) {

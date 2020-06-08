@@ -3,7 +3,11 @@
  */
 package fr.undev.linuxhacks.command;
 
+import net.minecraft.client.Minecraft;
+
 public abstract class Command {
+	public final Minecraft mc = Minecraft.getMinecraft();
+
     public abstract boolean onCommand(String var1, String[] var2);
 
     public String getDescription() {

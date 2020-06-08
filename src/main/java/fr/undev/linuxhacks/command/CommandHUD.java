@@ -8,24 +8,29 @@ import fr.undev.linuxhacks.module.Module;
 import fr.undev.linuxhacks.module.Modules;
 import fr.undev.linuxhacks.util.ChatUtils;
 
-public class CommandTest
+import fr.undev.linuxhacks.Main;
+
+public class CommandHUD
 extends Command {
     @Override
     public boolean onCommand(String command, String[] args) {
-        Module mod = Modules.getById("test");
-        Modules.toggle(mod.getId());
-        ChatUtils.printMessage(ChatUtils.toggledMsg(mod));
+        if (args.length > 1) {
+            return true;
+        }
+
+        mc.displayGuiScreen(Main.click_hud);
+
         return false;
     }
 
     @Override
     public String getUsage() {
-        return "toggle <module>";
+        return "hud";
     }
 
     @Override
     public String getDescription() {
-        return "Toggles a module";
+        return "Enable hud editor";
     }
 }
 
