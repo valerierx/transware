@@ -2,6 +2,7 @@ package fr.undev.linuxhacks.huds;
 
 // HUD.
 import fr.undev.linuxhacks.hud.HUD;
+import net.minecraft.client.Minecraft;
 
 /**
  *
