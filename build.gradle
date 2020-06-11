@@ -52,6 +52,7 @@ dependencies {
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compile group: 'org.ini4j', name: 'ini4j', version: '0.5.1'
     compile group: 'com.github.Vatuu', name: 'discord-rpc', version: '1.6.2'
+    compile group: "com.github.ZeroMemes", name: "Alpine", version: '1.9'
 }
 
 processResources {
@@ -85,7 +86,8 @@ shadowJar {
         include(dependency('com.googlecode.json-simple:json-simple'))
         include(dependency('org.ini4j:ini4j'))
         include(dependency('com.github.Vatuu:discord-rpc'))
+        include(dependency('com.github.ZeroMemes:Alpine'))
     }
-    exclude 'dummyThing' // can someone explain why this is here
+    exclude 'dummyThing' // edit me
     classifier = 'release'
 }

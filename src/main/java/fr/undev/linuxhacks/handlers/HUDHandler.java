@@ -7,9 +7,8 @@
  *  net.minecraftforge.client.event.RenderGameOverlayEvent$Post
  *  net.minecraftforge.fml.common.eventhandler.SubscribeEvent
  */
-package fr.undev.linuxhacks.events;
+package fr.undev.linuxhacks.handlers;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

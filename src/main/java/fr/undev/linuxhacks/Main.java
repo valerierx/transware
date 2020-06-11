@@ -1,11 +1,13 @@
 package fr.undev.linuxhacks;
 
 import fr.undev.linuxhacks.command.Commands;
-import fr.undev.linuxhacks.events.HUDHandler;
+import fr.undev.linuxhacks.handlers.HUDHandler;
+import fr.undev.linuxhacks.hud.HUDManager;
+import fr.undev.linuxhacks.hud.gui.HUDEditor;
 import fr.undev.linuxhacks.listeners.ClientChatListener;
 import fr.undev.linuxhacks.module.Modules;
-import fr.undev.linuxhacks.hud.gui.HUDEditor;
-import fr.undev.linuxhacks.hud.HUDManager;
+import me.zero.alpine.bus.EventBus;
+import me.zero.alpine.bus.EventManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,6 +24,8 @@ public class Main {
     public static HUDManager hud_manager;
 
     public static HUDEditor click_hud;
+
+    public static final EventBus EVENTBUS = new EventManager();
 
     public static Main MASTER;
 
