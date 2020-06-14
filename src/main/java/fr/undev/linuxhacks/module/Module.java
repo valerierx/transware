@@ -13,10 +13,9 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public abstract class Module {
     private final String displayName;
-    private final LinkedHashMap<String, Boolean> settings;
+    private final LinkedHashMap<String, String> settings;
     private String id;
 
-    public final Minecraft mc = Minecraft.getMinecraft();
 
     public Module(String name) {
         this.displayName = name;
@@ -33,7 +32,7 @@ public abstract class Module {
         return this.displayName;
     }
 
-    public HashMap<String, Boolean> getSettings() {
+    public HashMap<String, String> getSettings() {
         return this.settings;
     }
 

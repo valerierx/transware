@@ -11,8 +11,12 @@ package fr.undev.linuxhacks.listeners;
 
 import fr.undev.linuxhacks.command.Command;
 import fr.undev.linuxhacks.command.Commands;
+import fr.undev.linuxhacks.module.Module;
+import fr.undev.linuxhacks.module.Modules;
+import fr.undev.linuxhacks.module.chat.EDITME;
 import fr.undev.linuxhacks.util.ChatUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.CPacketChatMessage;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -38,6 +42,9 @@ public class ClientChatListener {
                 e.printStackTrace();
             }
         }
+            //String message = event.getMessage();
+            //event.setCanceled(true);
+            //Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " ⏐ ⓛⓘⓝⓤⓧ.ⓗⓐⓒⓚⓢ"));
     }
 }
 

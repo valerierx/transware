@@ -9,6 +9,7 @@ import fr.undev.linuxhacks.module.Modules;
 import fr.undev.linuxhacks.util.ChatUtils;
 
 import fr.undev.linuxhacks.Main;
+import net.minecraft.client.Minecraft;
 
 public class CommandHUD
 extends Command {
@@ -18,7 +19,7 @@ extends Command {
             return true;
         }
 
-        mc.displayGuiScreen(Main.click_hud);
+        Minecraft.getMinecraft().displayGuiScreen(Main.click_hud);
 
         return false;
     }

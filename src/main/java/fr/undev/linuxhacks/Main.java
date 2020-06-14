@@ -6,11 +6,10 @@ import fr.undev.linuxhacks.hud.HUDManager;
 import fr.undev.linuxhacks.hud.gui.HUDEditor;
 import fr.undev.linuxhacks.listeners.ClientChatListener;
 import fr.undev.linuxhacks.module.Modules;
-import me.zero.alpine.bus.EventBus;
-import me.zero.alpine.bus.EventManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.EventBus;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -25,14 +24,12 @@ public class Main {
 
     public static HUDEditor click_hud;
 
-    public static final EventBus EVENTBUS = new EventManager();
-
     public static Main MASTER;
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
-        MinecraftForge.EVENT_BUS.register((Object)new HUDHandler());
+        //MinecraftForge.EVENT_BUS.register((Object)new HUDHandler()); HUD is broken atm
         Commands.init();
         Modules.init();
 
