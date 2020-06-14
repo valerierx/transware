@@ -28,7 +28,7 @@ public class AnnouncerModule extends Module {
     @Override
     public void onTick(TickEvent.ClientTickEvent penis) {
         int randomNum = ThreadLocalRandom.current().nextInt(1, 25 + 1);
-        int randomAction = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+        int randomAction = ThreadLocalRandom.current().nextInt(1, 2 + 1);
         switch(randomAction){
             case 1 :
                 Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(this.getSettings().get("prefix") + " I just walked " + randomNum + " meters!"));
