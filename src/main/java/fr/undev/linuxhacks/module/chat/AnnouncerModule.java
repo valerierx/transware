@@ -12,7 +12,7 @@ public class AnnouncerModule extends Module {
     public AnnouncerModule(String name) {
         super(name);
         this.getSettings().put("delay", "5");
-        this.getSettings().put("prefix", "#TransRights");
+        this.getSettings().put("prefix", "#TwansWights");
     }
 
     @Override
