@@ -13,7 +13,7 @@ import fr.undev.linuxhacks.command.Command;
 import fr.undev.linuxhacks.command.Commands;
 import fr.undev.linuxhacks.module.Module;
 import fr.undev.linuxhacks.module.Modules;
-import fr.undev.linuxhacks.module.chat.EDITME;
+import fr.undev.linuxhacks.module.chat.Suffixes;
 import fr.undev.linuxhacks.util.ChatUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CPacketChatMessage;

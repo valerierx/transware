@@ -8,8 +8,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
  *
  * this is a fortnite sex squad clan reference
  */
-public class EDITME extends Module {
-    public EDITME(String name) {
+public class Suffixes extends Module {
+    public Suffixes(String name) {
         super(name);
     }
     @Override

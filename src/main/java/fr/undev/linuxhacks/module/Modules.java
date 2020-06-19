@@ -3,8 +3,13 @@
  */
 package fr.undev.linuxhacks.module;
 
-import fr.undev.linuxhacks.module.Module;
+import fr.undev.linuxhacks.module.chat.AnnouncerModule;
+import fr.undev.linuxhacks.module.chat.MygotSpammer;
+import fr.undev.linuxhacks.module.chat.Spamfiles;
+import fr.undev.linuxhacks.module.chat.Suffixes;
+import fr.undev.linuxhacks.module.combat.Aura;
 import fr.undev.linuxhacks.module.test.TestModule;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -20,6 +25,11 @@ public class Modules {
     }
 
     public static void init() {
+        Modules.register("announcer", new AnnouncerModule("announcer"));
+        Modules.register("spamfiles", new Spamfiles("Spamfiles"));
+        Modules.register("mygotspam", new MygotSpammer("myg0tSpammer"));
+        Modules.register("suffixes", new Suffixes("Suffixes"));
+        Modules.register("aura", new Aura("Aura"));
         Modules.register("test", new TestModule("Test"));
     }
 
