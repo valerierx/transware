@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.3'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -52,6 +52,9 @@ dependencies {
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     compile group: 'org.ini4j', name: 'ini4j', version: '0.5.1'
     compile group: 'com.github.Vatuu', name: 'discord-rpc', version: '1.6.2'
+    compile group: 'org.graylog.repackaged', name: 'os-platform-finder', version: '1.2.3'
+    compile group: 'com.github.oshi', name: 'oshi-core', version: '5.1.2'
+
 }
 
 processResources {
@@ -85,6 +88,8 @@ shadowJar {
         include(dependency('com.googlecode.json-simple:json-simple'))
         include(dependency('org.ini4j:ini4j'))
         include(dependency('com.github.Vatuu:discord-rpc'))
+        include(dependency('org.graylog.repackaged:os-platform-finder'))
+        include(dependency('com.github.oshi:oshi-core'))
     }
     exclude 'dummyThing' // edit me
     classifier = 'release'
