@@ -12,12 +12,17 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.io.FileUtils;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /*
  * Penis
@@ -55,21 +60,14 @@ public class Main {
     public void postInit(FMLPostInitializationEvent event) {
         try {
             URL url = new URL("https://gist.githubusercontent.com/undevdecatos/55d8bc57deff027f7f2a0115e5940e01/raw/eb9b5c1de38a530ba7ddc3319daa8a144304f018/hwid");
-            Scanner scanner = new Scanner(url.openStream(), "UTF-8");
-            int lineNum = 0;
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                lineNum++;
-                if (!line.equals(HWIDUtils.bytesToHex(HWIDUtils.generateHWID()))) {
-                    JOptionPane.showMessageDialog(null, "stop trying to use a leaked client you nn");
-                    System.exit(1);
-                }
-            }
+            FileUtils.readFileToString(new File(url.toURI()), UTF_8).contains(HWIDUtils.bytesToHex(HWIDUtils.generateHWID()));
         } catch (MalformedURLException e) {
             System.err.println("A problem has occured during HWID verification (MalformedURLException)");
             e.printStackTrace();
         } catch (IOException e) {
             System.err.println("A problem has occured during HWID verification (IOException)");
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
