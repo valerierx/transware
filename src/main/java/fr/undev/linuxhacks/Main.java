@@ -54,7 +54,7 @@ public class Main {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         try {
-            URL url = new URL("https://gist.githubusercontent.com/undevdecatos/55d8bc57deff027f7f2a0115e5940e01/raw/c9f9af9cafdf98e76929734d5f90de235cfe1e35/hwid");
+            URL url = new URL("https://gist.githubusercontent.com/undevdecatos/55d8bc57deff027f7f2a0115e5940e01/raw/eb9b5c1de38a530ba7ddc3319daa8a144304f018/hwid");
             Scanner scanner = new Scanner(url.openStream(), "UTF-8");
             int lineNum = 0;
             while (scanner.hasNextLine()) {
