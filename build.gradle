@@ -3,20 +3,29 @@ buildscript {
         jcenter()
         maven { url 'https://www.jitpack.io' }
         maven { url = "https://files.minecraftforge.net/maven" }
+        maven {
+            name="onkiup"
+            url = "https://raw.github.com/chedim/maven-repo/master/";
+        }
 
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.3'
+        classpath 'com.onkiup.gradle:minedroid:1.2-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'minedroid'
 
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 repositories {
-        
-        maven { url "https://jitpack.io" }
+    maven {
+        name="onkiup"
+        url = "https://raw.github.com/chedim/maven-repo/master/";
+    }
+    maven { url "https://jitpack.io" }
 }
 
 version = "0.1"
@@ -54,7 +63,7 @@ dependencies {
     compile group: 'com.github.Vatuu', name: 'discord-rpc', version: '1.6.2'
     compile group: 'org.graylog.repackaged', name: 'os-platform-finder', version: '1.2.3'
     compile group: 'com.github.oshi', name: 'oshi-core', version: '5.1.2'
-
+    compile 'com.onkiup.minedroid:minedroid:1.3.2'
 }
 
 processResources {

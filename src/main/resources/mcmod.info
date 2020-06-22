@@ -1,6 +1,6 @@
 [
 {
-  "modid": "linux.hacks",
+  "modid": "linuxware",
   "name": "linux.hacks",
   "description": "utility mod",
   "version": "${version}",
@@ -10,6 +10,7 @@
   "authorList": ["64Linux", "SrRina"],
   "credits": "",
   "logoFile": "",
+  "package": "fr.undev.linuxhacks",
   "screenshots": [],
   "dependencies": []
 }
