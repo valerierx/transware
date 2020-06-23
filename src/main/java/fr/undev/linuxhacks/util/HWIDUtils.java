@@ -11,7 +11,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
+
 /*
+ * TODO: Write a cross platform library to get gpu name
+ *
  * hwid based on xploding's HWID.jar
  * getting distro name now thanks to random os detection library i found on github lol
  */

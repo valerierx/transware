@@ -3,11 +3,9 @@
  */
 package fr.undev.linuxhacks.module;
 
-import fr.undev.linuxhacks.module.chat.AnnouncerModule;
-import fr.undev.linuxhacks.module.chat.MygotSpammer;
-import fr.undev.linuxhacks.module.chat.Spamfiles;
-import fr.undev.linuxhacks.module.chat.Suffixes;
+import fr.undev.linuxhacks.module.chat.*;
 import fr.undev.linuxhacks.module.combat.Aura;
+import fr.undev.linuxhacks.module.render.Fullbright;
 import fr.undev.linuxhacks.module.test.TestModule;
 
 import java.util.ArrayList;
@@ -29,8 +27,10 @@ public class Modules {
         Modules.register("spamfiles", new Spamfiles("Spamfiles"));
         Modules.register("mygotspam", new MygotSpammer("myg0tSpammer"));
         Modules.register("suffixes", new Suffixes("Suffixes"));
+        Modules.register("welcomer", new Welcomer("Welcomer"));
         Modules.register("aura", new Aura("Aura"));
         Modules.register("test", new TestModule("Test"));
+        Modules.register("fullbright", new Fullbright("Fullbright"));
     }
 
     public static void register(String id, Module module) {

@@ -103,3 +103,10 @@ shadowJar {
     exclude 'dummyThing' // edit me
     classifier = 'release'
 }
+
+reobf {
+    shadowJar {
+        mappingType = 'SEARGE'
+        classpath = sourceSets.main.compileClasspath
+    }
+}

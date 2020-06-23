@@ -1,17 +1,12 @@
 package fr.undev.linuxhacks;
 
 import fr.undev.linuxhacks.command.Commands;
+import fr.undev.linuxhacks.handlers.RPCHandler;
 import fr.undev.linuxhacks.hud.HUDManager;
 import fr.undev.linuxhacks.hud.gui.HUDEditor;
 import fr.undev.linuxhacks.listeners.ClientChatListener;
-import fr.undev.linuxhacks.module.Module;
+import fr.undev.linuxhacks.listeners.ClientTickListener;
 import fr.undev.linuxhacks.module.Modules;
-import fr.undev.linuxhacks.util.HWIDUtils;
-import net.arikia.dev.drpc.DiscordEventHandlers;
-import net.arikia.dev.drpc.DiscordRPC;
-import net.arikia.dev.drpc.DiscordUser;
-import net.arikia.dev.drpc.callbacks.ReadyCallback;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -19,19 +14,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.apache.commons.io.FileUtils;
 
-import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /*
  * Penis
@@ -53,6 +38,7 @@ public class Main {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
+        MinecraftForge.EVENT_BUS.register(ClientTickListener.class);
 
         //MinecraftForge.EVENT_BUS.register((Object)new HUDHandler()); HUD is broken atm
         Commands.init();
@@ -76,8 +62,8 @@ public class Main {
         //    System.exit(1);
         //}
 
-        // TODO: check if discordrpc module is enabled before enabling
-        MinecraftForge.EVENT_BUS.register(LinuxRPC.class);
-        LinuxRPC.initRPC();
+        // TODO: check if discordrpc module is enabled before registering event and enabling
+        MinecraftForge.EVENT_BUS.register(new RPCHandler());
+        RPCHandler.initRPC();
     }
 }

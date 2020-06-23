@@ -15,7 +15,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Friends {
     public static boolean removeLineFromFile(String file, String lineToRemove) {
-
         try {
 
             File inFile = new File(file);

@@ -42,9 +42,6 @@ public class ClientChatListener {
                 e.printStackTrace();
             }
         }
-            //String message = event.getMessage();
-            //event.setCanceled(true);
-            //Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " ⏐ ⓛⓘⓝⓤⓧ.ⓗⓐⓒⓚⓢ"));
     }
 }
 
