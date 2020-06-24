@@ -33,11 +33,13 @@ public class RPCHandler {
             case "iZeroTwo_":
                 return "nekopvp";
             case "molfernus":
-                return "peeman42";
+                return "molfernus";
             case "ICHARDNOL99":
                 return "chardnolet";
             case "Weaknessfag":
                 return "_ph";
+            case "cchard":
+                return "peeman42";
         }
         return "nn";
     }
