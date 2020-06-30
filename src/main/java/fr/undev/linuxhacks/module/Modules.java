@@ -5,6 +5,7 @@ package fr.undev.linuxhacks.module;
 
 import fr.undev.linuxhacks.module.chat.*;
 import fr.undev.linuxhacks.module.combat.Aura;
+import fr.undev.linuxhacks.module.combat.AutoTotem;
 import fr.undev.linuxhacks.module.render.Fullbright;
 import fr.undev.linuxhacks.module.test.TestModule;
 
@@ -31,6 +32,7 @@ public class Modules {
         Modules.register("aura", new Aura("Aura"));
         Modules.register("test", new TestModule("Test"));
         Modules.register("fullbright", new Fullbright("Fullbright"));
+        Modules.register("autototem", new AutoTotem("AutoTotem"));
     }
 
     public static void register(String id, Module module) {
