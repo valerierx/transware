@@ -1,6 +1,7 @@
 package fr.undev.linuxhacks;
 
 import fr.undev.linuxhacks.command.Commands;
+import fr.undev.linuxhacks.handlers.HUDHandler;
 import fr.undev.linuxhacks.handlers.RPCHandler;
 import fr.undev.linuxhacks.hud.HUDManager;
 import fr.undev.linuxhacks.hud.gui.HUDEditor;
@@ -40,7 +41,7 @@ public class Main {
         MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
         MinecraftForge.EVENT_BUS.register(ClientTickListener.class);
 
-        //MinecraftForge.EVENT_BUS.register((Object)new HUDHandler()); HUD is broken atm
+        MinecraftForge.EVENT_BUS.register(new HUDHandler());
         Commands.init();
         Modules.init();
 

@@ -76,6 +76,10 @@ public class Modules {
         return enabled;
     }
 
+    public static Collection<String> getSettings() {
+        return settings;
+    }
+
     public static Module getById(String id) {
         return registered.get(id);
     }

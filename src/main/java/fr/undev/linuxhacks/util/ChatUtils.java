@@ -29,7 +29,7 @@ public class ChatUtils {
     }
 
     public static ITextComponent toggledMsg(Module module) {
-        return ChatUtils.coloredString(module.getDisplayName() + " has been " + (Modules.isEnabled(module.getId()) ? "enabled" : "disabled"), "teal");
+        return ChatUtils.coloredString(module.getDisplayName() + " has been " + (Modules.isEnabled(module.getId()) ? "enabled" : "disabled"), "red");
     }
 }
 

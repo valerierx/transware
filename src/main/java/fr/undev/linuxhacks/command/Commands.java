@@ -15,6 +15,7 @@ public class Commands {
         Commands.register("friend", new CommandFriend());
         Commands.register("toggle", new CommandToggle());
         Commands.register("hud", new CommandHUD());
+        Commands.register("set", new CommandSet());
     }
 
     public static void register(String id, Command command) {

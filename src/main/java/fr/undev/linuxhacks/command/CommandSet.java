@@ -1,15 +1,11 @@
-/*
- * Decompiled with CFR 0.149.
- */
 package fr.undev.linuxhacks.command;
 
-import fr.undev.linuxhacks.command.Command;
 import fr.undev.linuxhacks.module.Module;
 import fr.undev.linuxhacks.module.Modules;
 import fr.undev.linuxhacks.util.ChatUtils;
+import net.minecraft.util.text.TextFormatting;
 
-public class CommandToggle
-extends Command {
+public class CommandSet extends Command {
     @Override
     public boolean onCommand(String command, String[] args) {
         String module = "null";
@@ -19,31 +15,30 @@ extends Command {
         }
 
         if (args.length > 2) {
-            ChatUtils.printMessage(ChatUtils.coloredString("Modules: " + Modules.getRegistered().keySet(), "white"));
             return true;
         }
 
         if (module.equals("null")) {
-            ChatUtils.printMessage(ChatUtils.coloredString("Modules: " + Modules.getRegistered().keySet(), "white"));
+            ChatUtils.printMessage(ChatUtils.coloredString("No such module", "red"));
             return true;
         }
 
         Module mod = Modules.getById(module);
-        Modules.toggle(mod.getId());
-
-        ChatUtils.printMessage(ChatUtils.toggledMsg(mod));
-
+        if(args[2].length() < 1) {
+            ChatUtils.printMessage(ChatUtils.coloredString("Settings: " + mod.getSettings().keySet(), "white"));
+            return true;
+        }
+        mod.getSettings().put(args[2], args[3]);
         return false;
     }
 
     @Override
     public String getUsage() {
-        return "toggle <module>";
+        return "set <Module> <Setting> <Argument>";
     }
-
     @Override
+
     public String getDescription() {
-        return "Toggles a module";
+        return "Edit settings";
     }
 }
-

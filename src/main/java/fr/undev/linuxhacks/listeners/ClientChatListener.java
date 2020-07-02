@@ -32,7 +32,7 @@ public class ClientChatListener {
                 if (Commands.getRegistered().containsKey(args[0].replace(Commands.getPrefix(), ""))) {
                     Command command = Commands.getRegistered().get(args[0].replace(Commands.getPrefix(), ""));
                     if (command.onCommand(args[0], args)) {
-                        ChatUtils.printMessage(ITextComponent.Serializer.fromJsonLenient((String)("{\"text\":\"Usage: " + Commands.getPrefix() + command.getUsage() + "\",\"color\":\"red\"}")));
+                        ChatUtils.printMessage(ITextComponent.Serializer.fromJsonLenient((String)("{\"text\":\"Usage: " + Commands.getPrefix() + command.getUsage() + "\",\"color\":\"light_purple\"}")));
                     }
                 } else {
                     ChatUtils.printMessage(ITextComponent.Serializer.fromJsonLenient((String)("{\"text\":\"Unknown command. Type \\\"" + Commands.getPrefix() + "help\\\" for help.\",\"color\":\"red\"}")));
