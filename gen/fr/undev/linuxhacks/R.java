@@ -1,4 +1,4 @@
-package fr.undev.linuxhacks;
+package fr.undev.transware;
 
 import com.onkiup.minedroid.gui.resources.*;
 import com.onkiup.minedroid.gui.MineDroid;

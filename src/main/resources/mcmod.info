@@ -1,7 +1,7 @@
 [
 {
-  "modid": "linuxware",
-  "name": "linux.hacks",
+  "modid": "transware",
+  "name": "TransWare",
   "description": "utility mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
