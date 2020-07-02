@@ -10,8 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 /*
- * code is in ClientChatListener
- *
+ * EDIT ME
  * this is a fortnite sex squad clan reference
  */
 public class Suffixes extends Module {
@@ -37,7 +36,7 @@ public class Suffixes extends Module {
         String message = event.getOriginalMessage();
         Minecraft.getMinecraft().ingameGUI.getChatGUI().addToSentMessages(event.getOriginalMessage());
         event.setCanceled(true);
-        if(!message.startsWith(Commands.getPrefix())) {
+        if(!message.startsWith(Commands.getPrefix())){
             Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " ⏐ ⓛⓘⓝⓤⓧ.ⓗⓐⓒⓚⓢ"));
         }
     }
