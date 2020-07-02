@@ -20,7 +20,7 @@ public class HUDWelcome extends HUD {
 
 	@Override
 	public void render() {
-		String huh = "hii :^) welcome uwu" + Minecraft.getMinecraft().getSession().getUsername(); //uwufy
+		String huh = "hii :^) welcome uwu" + Minecraft.getMinecraft().getSession().getUsername(); //uwufied it
 
 		create(huh, 10, 10, 255, 255, 255);
 	}

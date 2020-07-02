@@ -34,10 +34,10 @@ public class AnnouncerModule extends Module {
             startTime = System.currentTimeMillis();
             switch(randomAction){
                 case 1 :
-                    Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(this.getSettings().get("prefix") + " I just walked " + randomNum + " meters!"));
+                    Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(this.getSettings().get("prefix") + " I just walked " + randomNum + " meters thanks to transware!"));
                     break;
                 case 2 :
-                    Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(this.getSettings().get("prefix") + " I just placed " + randomNum + " blocks!"));
+                    Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(this.getSettings().get("prefix") + " I just placed " + randomNum + " blocks thanks to transware!"));
                     break;
             }
         }
