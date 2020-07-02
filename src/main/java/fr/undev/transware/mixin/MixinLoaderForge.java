@@ -11,6 +11,7 @@ import java.util.Map;
 public class MixinLoaderForge implements IFMLLoadingPlugin {
 
     private static boolean isObfuscatedEnvironment = false;
+    private Map<String, Object> map;
 
     public MixinLoaderForge() {
         Main.log.info("transware mixins initialized");
@@ -35,10 +36,6 @@ public class MixinLoaderForge implements IFMLLoadingPlugin {
         return null;
     }
 
-    @Override
-    public void injectData(Map<String, Object> map) {
-
-    }
 
     @Override
     public void injectData(Map<String, Object> data) {
