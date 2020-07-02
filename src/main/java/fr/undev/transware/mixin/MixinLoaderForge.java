@@ -16,7 +16,7 @@ public class MixinLoaderForge implements IFMLLoadingPlugin {
     public MixinLoaderForge() {
         Main.log.info("transware mixins initialized");
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.trans.json");
+        Mixins.addConfigurations("mixins.trans.json", "mixins.emojiapi.json");
         MixinEnvironment.getDefaultEnvironment().setObfuscationContext("searge");
         Main.log.info(MixinEnvironment.getDefaultEnvironment().getObfuscationContext());
     }

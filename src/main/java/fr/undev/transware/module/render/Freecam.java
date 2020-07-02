@@ -1,10 +1,13 @@
 package fr.undev.transware.module.render;
 
+import fr.undev.transware.event.PacketSent;
 import fr.undev.transware.module.Module;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.network.play.client.CPacketInput;
+import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraftforge.client.event.PlayerSPPushOutOfBlocksEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -86,5 +89,12 @@ public class Freecam extends Module {
     @SubscribeEvent
     public void onPlayerSPPushOutOfBlocks(PlayerSPPushOutOfBlocksEvent event) {
         event.setCanceled(true);
+    }
+
+    @SubscribeEvent
+    public void onPacketSent(PacketSent event) {
+        if (event.getPacket() instanceof CPacketPlayer || event.getPacket() instanceof CPacketInput) {
+            event.setCanceled(true);
+        }
     }
 }

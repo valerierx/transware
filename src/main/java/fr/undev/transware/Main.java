@@ -25,18 +25,18 @@ import java.util.List;
  * Penis
  */
 
-@Mod(modid="linuxware", name="linux.hacks", version="0.1", acceptedMinecraftVersions="[1.12.2]")
+@Mod(modid="transware", name="transware", version="0.1", acceptedMinecraftVersions="[1.12.2]")
 @SideOnly(value=Side.CLIENT)
 public class Main {
-    public static final String MODID = "linuxware";
-    public static final String NAME = "linux.hacks";
+    public static final String MODID = "transware";
+    public static final String NAME = "transware";
     public static final String VERSION = "0.1";
 
     public static HUDManager hud_manager;
 
     public static HUDEditor click_hud;
 
-    public static final Logger log = LogManager.getLogger("LinuxHacks");
+    public static final Logger log = LogManager.getLogger("transware");
 
     public static Main MASTER;
 

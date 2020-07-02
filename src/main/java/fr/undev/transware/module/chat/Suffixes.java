@@ -1,6 +1,7 @@
 package fr.undev.transware.module.chat;
 
 import fr.undev.transware.command.Commands;
+import fr.undev.transware.event.PacketSent;
 import fr.undev.transware.module.Module;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CPacketChatMessage;
@@ -32,12 +33,15 @@ public class Suffixes extends Module {
     }
 
     @SubscribeEvent
-    public void onMessageSent(ClientChatEvent event) {
-        String message = event.getOriginalMessage();
-        Minecraft.getMinecraft().ingameGUI.getChatGUI().addToSentMessages(event.getOriginalMessage());
-        event.setCanceled(true);
-        if(!message.startsWith(Commands.getPrefix())){
-            Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " | ᴛʀᴀɴꜱᴡᴀʀᴇ"));
+    public void onPacketSent(PacketSent event) {
+        if (event.getPacket() instanceof CPacketChatMessage) {
+            String message = ((CPacketChatMessage) event.getPacket()).getMessage();
+            if(!message.startsWith(Commands.getPrefix()) && !message.startsWith("/")){
+                message += " | ᴛʀᴀɴꜱᴡᴀʀᴇ";
+                if (message.length() >= 256) message = message.substring(0,256);
+                ((CPacketChatMessage) event.getPacket()).message = message;
+
+            }
         }
     }
 }
