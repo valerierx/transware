@@ -37,7 +37,7 @@ public class Suffixes extends Module {
         Minecraft.getMinecraft().ingameGUI.getChatGUI().addToSentMessages(event.getOriginalMessage());
         event.setCanceled(true);
         if(!message.startsWith(Commands.getPrefix())){
-            Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " ⏐ ⓛⓘⓝⓤⓧ.ⓗⓐⓒⓚⓢ"));
+            Minecraft.getMinecraft().getConnection().sendPacket(new CPacketChatMessage(message + " | ᴛʀᴀɴꜱᴡᴀʀᴇ"));
         }
     }
 }
