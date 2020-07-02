@@ -6,8 +6,8 @@ import com.onkiup.minedroid.gui.Overlay;
 import com.onkiup.minedroid.gui.events.MouseEvent;
 import com.onkiup.minedroid.gui.views.View;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side; // just added stuff here so i could commit lmfao
+import net.minecraftforge.fml.relauncher.SideOnly; // more stuff so i can commit again
 
 @SideOnly(Side.CLIENT)
 public class Gui extends Overlay {
