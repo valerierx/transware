@@ -63,7 +63,7 @@ public class Main {
         List<String> halflife2 = Arrays.asList(fuckleakers);
 
         //if(!halflife2.contains(HWIDUtils.bytesToHex(HWIDUtils.generateHWID()))){
-        //    JOptionPane.showMessageDialog(null, "stop trying to use a leaked client you nn");
+        //    JOptionPane.showMessageDialog(null, "no you cant use the legendary leaked transware you fuck");
         //    System.exit(1);
         //}
 
