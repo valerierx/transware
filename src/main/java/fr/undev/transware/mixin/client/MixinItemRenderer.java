@@ -10,8 +10,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.renderer.ItemRenderer;
 
 @Mixin(ItemRenderer.class)
-public abstract class MixinItemRenderer {
+public abstract class MixinItemRenderer { /*
 
-    //TODO linux girl add instanc e stuff to main so i can make mixin and add no render and nohands and otehr coool cstuff like fov changer
+    @Inject(method = "renderFireInFirstPerson", at = @At("HEAD"), cancellable = true)
+    public void onFirstPersonRenderFire(CallbackInfo ci) {
+        FireOverlayEvent event = new FireOverlayEvent();
+        Main.getInstance().postInit event
+        if (event.isCancelled()) ci.cancel();
+    }
 
+    @Inject(method = "renderArmFirstPerson", at = @At("HEAD"), cancellable = true)
+    public void onArmFirstPerson(CallbackInfo ci) {
+        RenderArmEvent event = new RenderArmEvent();
+        IngrosWare.INSTANCE.bus.fireEvent(event);
+        if (event.isCancelled()) ci.cancel();
+    } */
+// how
 }
