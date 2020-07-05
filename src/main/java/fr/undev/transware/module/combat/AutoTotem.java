@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 /*
- *
+ * hello
  */
 public class AutoTotem extends Module {
     int totems;
