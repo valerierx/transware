@@ -40,6 +40,14 @@ public class Main {
 
     public static Main MASTER;
 
+    @Mod.Instance
+    private static Main INSTANCE;
+
+    public static Main getInstance() {
+        return INSTANCE;
+    }
+
+
     @EventHandler
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(ClientChatListener.class);
