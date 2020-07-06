@@ -81,7 +81,6 @@ dependencies {
     compile group: 'org.graylog.repackaged', name: 'os-platform-finder', version: '1.2.3'
     compile group: 'com.github.oshi', name: 'oshi-core', version: '5.1.2'
     compile 'com.onkiup.minedroid:minedroid:1.3.2'
-    compile "com.github.2b2t-Utilities:emoji-api:1.0"
 
 }
 
@@ -127,7 +126,6 @@ shadowJar {
         include(dependency('org.graylog.repackaged:os-platform-finder'))
         include(dependency('com.github.oshi:oshi-core'))
         include(dependency('org.spongepowered:mixin'))
-        include(dependency("com.github.2b2t-Utilities:emoji-api"))
     }
     exclude 'dummyThing' // edit me
     classifier = 'release'

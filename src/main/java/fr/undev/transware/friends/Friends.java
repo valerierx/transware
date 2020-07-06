@@ -75,7 +75,7 @@ public class Friends {
         try {
             pw = new PrintWriter(new FileWriter(Minecraft.getMinecraft().mcDataDir.getAbsolutePath() + "/linux.friends"));
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
         pw.write(username);
         pw.close();
@@ -89,7 +89,7 @@ public class Friends {
                 return false;
             }
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             return false;
         }
     }

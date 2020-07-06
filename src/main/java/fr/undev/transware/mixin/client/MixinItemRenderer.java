@@ -22,7 +22,7 @@ public abstract class MixinItemRenderer { /*
     @Inject(method = "renderArmFirstPerson", at = @At("HEAD"), cancellable = true)
     public void onArmFirstPerson(CallbackInfo ci) {
         RenderArmEvent event = new RenderArmEvent();
-        IngrosWare.INSTANCE.bus.fireEvent(event);
+        MinecraftForge.EVENT_BUS.post(event);
         if (event.isCancelled()) ci.cancel();
     } */
 // how
