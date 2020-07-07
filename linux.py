@@ -1,5 +1,5 @@
 print("transware.py")
 
-transware = "chad"
+transware = "big yes"
 
 print(transware)

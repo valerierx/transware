@@ -181,4 +181,4 @@ public class HUD {
 	protected int get_font_height(String string) {
 		return TDraw.get_font_height(string, 1);
 	}
-} // sexc code - mikk
+}
