@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ClickGUI extends GuiScreen {
+    // PLACEHOLDER SETTINGS, REPLACE WITH REAL SETTINGS ONCE SETTIGNS ARE MADE!!!
+    public int frameWidth = 100;
+
     private final ArrayList<Frame> frames = new ArrayList<>();
 
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {

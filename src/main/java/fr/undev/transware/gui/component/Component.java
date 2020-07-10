@@ -18,7 +18,10 @@ public class Component extends Element {
         setPosY(posY+offset);
     }
 
-    private float getOffset() {
+    public void drawComponent(int mouseX, int mouseY, float partialTicks) {
+    }
+
+    public float getOffset() {
         return this.offset;
     }
 }
