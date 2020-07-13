@@ -3,3 +3,5 @@
 change da world my final message goodbye
 
 skid if u are monky
+
+trans rights
