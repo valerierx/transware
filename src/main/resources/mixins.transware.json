@@ -4,6 +4,5 @@
   "package": "fr.undev.transware.mixin.client",
   "refmap": "mixins.trans.refmap.json",
   "client": [
-    "MixinNetworkManager"
   ]
 }
