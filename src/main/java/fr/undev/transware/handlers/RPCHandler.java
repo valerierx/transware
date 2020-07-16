@@ -41,7 +41,7 @@ public class RPCHandler {
             case "cchard":
                 return "peeman42";
             case "peeman41"
-                return "_ph"
+                return "_ph";
         }
         return "nn";
     }
