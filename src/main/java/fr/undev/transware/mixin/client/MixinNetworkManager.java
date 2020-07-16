@@ -43,4 +43,4 @@ public class MixinNetworkManager {
         packet = event.getPacket();
     }
 }
-/*
+*/
