@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  *
  * @since 02/07/2020
  **/
-
+/*
 @Mixin(NetworkManager.class)
 public class MixinNetworkManager {
     @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("HEAD"), cancellable = true)
@@ -43,3 +43,4 @@ public class MixinNetworkManager {
         packet = event.getPacket();
     }
 }
+/*
